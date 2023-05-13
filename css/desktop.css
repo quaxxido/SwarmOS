@@ -1,8 +1,10 @@
 body, html {
-    cursor: url("../desktop_html/cursors/how_to_hold_neurosama.png"), default;
+    cursor: url("../desktop_html/cursors/this.png"), auto;
     background-color: #0a86c2;
 }
-
+* {
+    cursor: url("../desktop_html/cursors/this.png"), auto;
+}
 .window {
     position:absolute;
     height:200px;

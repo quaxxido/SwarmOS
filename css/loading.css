@@ -21,3 +21,6 @@ h1 {
     top:400px;
     text-align: center;
 }
+* {
+    cursor: url("../desktop_html/cursors/this.png"), auto;
+}
