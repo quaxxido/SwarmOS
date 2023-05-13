@@ -1,4 +1,5 @@
-html, body {margin: 0; height: 100%; overflow: hidden}
+html, body {margin: 0; height: 100%; color:aliceblue;
+    background-color: palevioletred; overflow: hidden}
 
             div img {
     position:absolute;
@@ -20,8 +21,3 @@ h1 {
     top:400px;
     text-align: center;
 }
-
-            * {
-                color:aliceblue;
-                background-color: palevioletred;
-            }
