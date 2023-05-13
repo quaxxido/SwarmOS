@@ -1,5 +1,5 @@
 body {
-    background-color: royalblue;
+    background-color: #0a86c2;
 }
 .window {
     position:absolute;
@@ -23,6 +23,32 @@ body {
     width:300px;
     padding: 5px;
     border-radius: 5px 5px 0 0;
+}
+.dock {
+    overflow:hidden;
+    top:870px;
+    background-color: palevioletred;
+    left: 750px;
+    border-radius: 30px;
+    -webkit-box-shadow: 7px 8px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 7px 8px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 7px 8px 8px 0px rgba(34, 60, 80, 0.2);
+    position:absolute;
+    height:70px;
+    width:450px;
+}
+.dicon {
+    position: relative;
+    width: 45px;
+    left: 20px;
+    top: 12px;
+    margin-left: 30px;
+    height: 45px;
+}
+.dicon:hover {
+transform: scale(1.3);
+transform: translateY(300);
+
 }
 .terminal .btns {
     position: absolute;
@@ -58,18 +84,3 @@ body {
 }
 .shadow { box-shadow: 0px 0px 10px rgba(0,0,0,.4)}
 
-.navigate {
-    position:absolute;
-    height:350px;
-    width:350px;
-    z-index: 30;
-    top: 50%;
-    left: 50%;
-    border-radius: 5px;
-    margin-top: -140px;
-    margin-left: -100px;
-    background-color: #03002e;
-    color: aliceblue;
-    text-align: center;
-    font-size: medium;
-}
