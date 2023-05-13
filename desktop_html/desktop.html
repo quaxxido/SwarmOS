@@ -2,6 +2,8 @@
 <html>
    <head>
     <link rel="stylesheet" type="text/css" href="../css/desktop.css">
+    <link rel="stylesheet" href="../css/window-engine.min.css">
+    
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <title>Neurosama</title>
@@ -9,101 +11,40 @@
    </head>
    
    <body>
-    <div class="terminal space shadow">
-      <div  class="top">
-          <div class="btns">
-              <span class="circle red"></span>
-              <span class="circle yellow"></span>
-              <span class="circle green"></span>
-          </div>
-          <div class="title">SwarmOS</div>
+    <div class="windowGroup">
+
+      <!-- WINDOW 1 -->
+    
+      <div id="window1" class="window small" style="display: initial;">
+        <div class="purple">
+          <p class="windowTitle">Window!</p>
+        </div>
+        <div class="mainWindow">
+          <p>Change the swarm... \\</p>
+        </div>
       </div>
-      <pre  id="window" draggable="true" class="body">
-  ...
-  terminal test
-  backslash backslash backslash
-      </pre>
-  </div>
+    
+      <!-- WINDOW 2 -->
+    
+      
+      
+    </div>
+    
+     <button id="button1"><img class="desktop_icon" src="https://media.discordapp.net/attachments/303944796693725185/1053021805624954910/IMG_8619.png?width=675&height=676"></button> 
+    <button id="button2">2</button>
+    <button  id="button3">3</button>
   <div class="dock">
-    <img src="https://cdn.discordapp.com/attachments/1059569601144442911/1106870422559014913/how_to_hold_neurosama.png" class="dicon"> 
-    <img src="https://cdn.discordapp.com/attachments/1059569601144442911/1106870422559014913/how_to_hold_neurosama.png" class="dicon"> 
+    <img onclick="openWindow(1)" src="https://media.discordapp.net/attachments/303944796693725185/1053021805624954910/IMG_8619.png?width=675&height=676" class="dockicon"> 
+    <img src="https://cdn.discordapp.com/attachments/1059569601144442911/1106870422559014913/how_to_hold_neurosama.png" class="dockicon"> 
+    
   </div>
    </body>
+   <script src="../js/window-engine.min.js"></script>
    <script>
-    let draggableElem = document.getElementById("window");
-    let initialX = 0,
-      initialY = 0;
-    let moveElement = false;
+    function openWindow(id) {
+      const target = document.getElementById("window" + id);
+      target.style.display = "initial";
+    }
     
-    //Events Object
-    let events = {
-      mouse: {
-        down: "mousedown",
-        move: "mousemove",
-        up: "mouseup",
-      },
-      touch: {
-        down: "touchstart",
-        move: "touchmove",
-        up: "touchend",
-      },
-    };
-    
-    let deviceType = "";
-    
-    //Detech touch device
-    const isTouchDevice = () => {
-      try {
-        //We try to create TouchEvent (it would fail for desktops and throw error)
-        document.createEvent("TouchEvent");
-        deviceType = "touch";
-        return true;
-      } catch (e) {
-        deviceType = "mouse";
-        return false;
-      }
-    };
-    
-    isTouchDevice();
-    
-    //Start (mouse down / touch start)
-    draggableElem.addEventListener(events[deviceType].down, (e) => {
-      e.preventDefault();
-      //initial x and y points
-      initialX = !isTouchDevice() ? e.clientX : e.touches[0].clientX;
-      initialY = !isTouchDevice() ? e.clientY : e.touches[0].clientY;
-    
-      //Start movement
-      moveElement = true;
-    });
-    
-    //Move
-    draggableElem.addEventListener(events[deviceType].move, (e) => {
-      //if movement == true then set top and left to new X andY while removing any offset
-      if (moveElement) {
-        e.preventDefault();
-        let newX = !isTouchDevice() ? e.clientX : e.touches[0].clientX;
-        let newY = !isTouchDevice() ? e.clientY : e.touches[0].clientY;
-        draggableElem.style.top =
-          draggableElem.offsetTop - (initialY - newY) + "px";
-        draggableElem.style.left =
-          draggableElem.offsetLeft - (initialX - newX) + "px";
-        initialX = newX;
-        initialY = newY;
-      }
-    });
-    
-    //mouse up / touch end
-    draggableElem.addEventListener(
-      events[deviceType].up,
-      (stopMovement = (e) => {
-        moveElement = false;
-      })
-    );
-    
-    draggableElem.addEventListener("mouseleave", stopMovement);
-    draggableElem.addEventListener(events[deviceType].up, (e) => {
-      moveElement = false;
-    });
-        </script>
+   </script>
 </html>
