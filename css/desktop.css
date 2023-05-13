@@ -1,0 +1,25 @@
+body {
+    background-color: royalblue;
+}
+.window {
+    position:absolute;
+    height:200px;
+    width:200px;
+    z-index: 30;
+    background-color: red;
+}
+.navigate {
+    position:absolute;
+    height:350px;
+    width:350px;
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    margin-top: -140px;
+    margin-left: -100px;
+    background-color: #03002e;
+    color: aliceblue;
+    text-align: center;
+    font-size: medium;
+}

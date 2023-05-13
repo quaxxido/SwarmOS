@@ -1,0 +1,26 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+            div img {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+h1 {  
+    height:100%;
+  width:100%;
+  overflow:hidden; /* or overflow:auto; if you want scrollbars */
+  position: relative;
+    margin:auto;
+    margin: 0 auto;
+    font-size: 15px;
+    left: 0px;
+    top:400px;
+    text-align: center;
+}
+            * {
+                color:aliceblue;
+                background-color: palevioletred;
+            }
