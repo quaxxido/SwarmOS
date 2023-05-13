@@ -15,7 +15,7 @@
 
       <!-- WINDOW 1 -->
     
-      <div id="window1" class="window small" style="display: initial;">
+      <div id="window1" class="window small" style="display: none;">
         <div class="purple">
           <p class="windowTitle">Testing web player</p>
         </div>
@@ -23,8 +23,26 @@
           <iframe style="position: absolute; left:-0px; top:40px;" width="600" height="260" src="https://www.youtube.com/embed/mY4DvyyepL4" title="neuro and vedal spinning together for 3 hours" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
+      <div id="window2" class="window small" style="display: none;">
+        <div class="crimson">
+          <p class="windowTitle">silly cat</p>
+        </div>
+        <div class="mainWindow">
+          <p>i cannot contain the silliness</p>
+          <video
+          controls
+          src="https://cdn.discordapp.com/attachments/1059569601144442911/1084686914440925188/SPOILER_silly.mp4"
+          poster="https://media.discordapp.net/attachments/1059569601144442911/1106950679697830024/funny-cat-blog-15-desktop-background.png?width=1014&height=676"
+          width="300" height="200" style="position:absolute; top:80px; left:20px; 
+          object-fit: cover;
+       border:none;" >
+          Sorry, your browser doesn't support embedded videos, but don't worry, you can
+          <a href="https://пиздец">download it</a>
+            a       nd watch it with your favorite video player!
+          </video>
+        </div>
+      </div>
     
-      <!-- WINDOW 2 -->
     
       
       
@@ -35,7 +53,7 @@
     <button  id="button3">3</button>
   <div class="dock">
     <img onclick="openWindow(1)" src="https://media.discordapp.net/attachments/303944796693725185/1053021805624954910/IMG_8619.png?width=675&height=676" class="dockicon"> 
-    <img src="https://cdn.discordapp.com/attachments/1059569601144442911/1106870422559014913/how_to_hold_neurosama.png" class="dockicon"> 
+    <img onclick="openWindow(2)"src="https://media.discordapp.net/attachments/1059569601144442911/1106950679697830024/funny-cat-blog-15-desktop-background.png?width=1014&height=676" class="dockicon"> 
     
   </div>
    </body>
