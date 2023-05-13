@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="../css/desktop.css">
     <link rel="stylesheet" href="../css/window-engine.min.css">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <title>SwarmOS desktop!</title>
@@ -12,6 +13,7 @@
    
    <body>
     <div class="windowGroup">
+
 
       <!-- WINDOW 1 -->
     
@@ -59,6 +61,7 @@
    </body>
    <script src="../js/window-engine.min.js"></script>
    <script>
+    $(this).css('cursor', 'url(cursors/how_to_hold_neurosama.png)');
     function openWindow(id) {
       const target = document.getElementById("window" + id);
       target.style.display = "initial";
