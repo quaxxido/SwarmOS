@@ -97,7 +97,11 @@ var loadHTML = function (html) {
     iframe.contentWindow.document.write(html.replace(/<head>/i, '<head><base href="' + url + '"><scr' + 'ipt>document.addEventListener("click", function(e) { if(e.target && e.target.nodeName == "A") { e.preventDefault(); parent.loadURL(e.target.href); } });</scr' + 'ipt>'));
     iframe.contentWindow.document.close();
 }
+setInterval(function () {var x = Math.floor(Math.random() * 11);
+ if (x === 5) {window.location.href = "kernelpanic.html";} }, 30000);
 
 loadURL(iframe.src);
+   </script>
+   <script>
    </script>
 </html>
