@@ -8,12 +8,48 @@
             color:white;
             font-family: Ubuntu, "times new roman", times, roman, serif;
         }
+        
+p {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-size: 28px;
+  color: rgba(255,255,255,.70);
+}
+
+/* Animation */
+p {
+  animation: animated-text 10s steps(29,end) 1s 1 normal both,
+             animated-cursor 1500ms steps(29,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 2000px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
+}
     </style>
-      <title>Booting up...</title>
+      <title>Booting up...Wait what?</title>
    </head>
 
    <body>
-        Wait... What? A kernel panic? I dont remember adding this page here... SCHIZO \\\ <b> (code 0x3 not enough memory)
+        <p>Wait... What? Is that a kernel panic? I do not remember this... How you even got here? Report the error to the authorities. (0x3) Reboot in 3... 2... 1.
    </body>
-   
+   <script>
+    window.setTimeout(function(){
+
+// Move to a new location or you can do something else
+window.location.href = "../index.html";
+
+}, 14000);
+
+   </script>
 </html>
