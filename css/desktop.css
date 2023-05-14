@@ -113,6 +113,27 @@ body, html {
     padding: 3px;
     overflow: auto;
 }
+table {
+    border-collapse: collapse;
+}
+td{
+width: 2px;
+height: 4px;
+transition: background-color 0.3s;
+}
+
+    td.hovered {
+animation: color-cycle 5s infinite linear;
+
+}
+
+@keyframes color-cycle {
+0% { background-color: hsl(0, 100%, 50%); }
+25% { background-color: hsl(90, 100%, 50%); }
+50% { background-color: hsl(180, 100%, 50%); }
+75% { background-color: hsl(270, 100%, 50%); }
+100% { background-color: hsl(0, 100%, 50%); }
+}
 .space {
     margin: 10px;
 }

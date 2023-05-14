@@ -28,20 +28,11 @@
       </div>
       <div id="window2" class="window small" style="display: none;">
         <div class="crimson">
-          <p class="windowTitle">silly cat</p>
+          <p class="windowTitle">silly neurofumo particles</p>
         </div>
         <div class="mainWindow">
-          <p>i cannot contain the silliness</p>
-          <video
-          controls
-          src="https://cdn.discordapp.com/attachments/1059569601144442911/1084686914440925188/SPOILER_silly.mp4"
-          poster="https://media.discordapp.net/attachments/1059569601144442911/1106950679697830024/funny-cat-blog-15-desktop-background.png?width=1014&height=676"
-          width="300" height="200" style="position:absolute; top:80px; left:20px; 
-          object-fit: cover;
-       border:none;" >
-          Sorry, your browser doesn't support embedded videos, but don't worry, you can
-          <a href="https://пиздец">download it</a>
-            a       nd watch it with your favorite video player!
+          <p>This IS LAGGY!!! Close the window if you are feeling LAGGY</p>
+          <iframe id="" src="neurofumo.html" style="border:none;height:200px;"></iframe>
           </video>
         </div>
       </div>
@@ -75,6 +66,74 @@
     x.style.display = "none";
   }
 }
+var div = document.getElementById("target");
+      div.onload = function() {
+        div.style.height = div.contentWindow.document.body.scrollHeight + 'px';
+      }
+// JavaScript to toggle the 'hovered' class on hover
+document.addEventListener('DOMContentLoaded', function() {
+      var tds = document.getElementsByTagName('td');
+      for (var i = 0; i < tds.length; i++) {
+        tds[i].addEventListener('mouseover', function() {
+          this.classList.add('hovered');
+        });
+        tds[i].addEventListener('mouseout', function() {
+          this.classList.remove('hovered');
+        });
+      }
+    });
+     // JavaScript to toggle the 'hovered' class on click and apply to cells within a gradually increasing circular radius
+     document.addEventListener('DOMContentLoaded', function() {
+      var tds = document.getElementsByTagName('td');
+
+      function assignHoveredClass(target, radius) {
+        var currentIndex = Array.prototype.indexOf.call(tds, target);
+        var currentRow = Math.floor(currentIndex / 128); // Assuming 128 cells per row
+
+        for (var i = 0; i < tds.length; i++) {
+          var rowIndex = Math.floor(i / 128);
+          var colIndex = i % 128;
+          var distance = Math.sqrt(Math.pow(rowIndex - currentRow, 2) + Math.pow(colIndex - (currentIndex % 128), 2));
+
+          if (distance <= radius) {
+            tds[i].classList.add('hovered');
+            setTimeout(function() {
+            tds[i].classList.remove('hovered');
+          }, 500);
+            //console.log("if")
+          } else {
+            //tds[i].classList.remove('hovered');
+          
+            //console.log("else")
+          }
+        }
+      }
+
+      function handleClick(target) {
+        var maxRadius = Math.floor(Math.random() * 20) + 1; // Maximum radius for the hovered cells
+        var currentRadius = 1;
+        var interval = setInterval(function() {
+          assignHoveredClass(target, currentRadius);
+          currentRadius++;
+          if (currentRadius > maxRadius) {
+            clearInterval(interval);
+          }
+        }, 200); // Delay in milliseconds between radius increment
+
+        setTimeout(function() {
+          assignHoveredClass(target, maxRadius);
+        }, (maxRadius + 1) * 200); // Delay for the final radius
+      }
+
+      for (var i = 0; i < tds.length; i++) {
+        tds[i].addEventListener('click', function() {
+          var self = this;
+          setTimeout(function() {
+            handleClick(self);
+          }, 0); // Delay in milliseconds to allow time for the 'hovered' class removal in case of rapid clicks
+        });
+      }
+    });
     
     $(this).css('cursor', 'url(cursors/how_to_hold_neurosama.png)');
     function openWindow(id) {
