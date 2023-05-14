@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/user.css' rel='stylesheet'>
       <title>SwarmOS desktop!</title>
       
    </head>
@@ -54,13 +55,15 @@
     <button id="button2">2</button>
     <button  id="button3">3</button>
   <div class="dock">
-    
+    <p id="date" class="date">curr</p>
     <img  id="log" onclick="pizdec()" class="logo" src="https://images-ext-2.discordapp.net/external/3mRBTNKBfdqaBegdVhFOsRtA42tfQKoI5mdELRjsujI/https/cdn.discordapp.com/stickers/1071871506705035384.png">
     <img onclick="openWindow(1)" src="https://media.discordapp.net/attachments/303944796693725185/1053021805624954910/IMG_8619.png?width=675&height=676" class="dockicon"> 
     <img onclick="openWindow(2)"src="https://media.discordapp.net/attachments/1059569601144442911/1106950679697830024/funny-cat-blog-15-desktop-background.png?width=1014&height=676" class="dockicon"> 
     
   </div>
-  <div id="bargoesbrr"></div>
+  <div id="bargoesbrr">
+    <div class="user"><i style="width: 4px; height:4px;"class="gg-user"></i>   <p class="utext">quaxxido@swarmOS</p></div>
+  </div>
    </body>
    <script src="../js/window-engine.min.js"></script>
    <script>
@@ -97,6 +100,12 @@ var loadHTML = function (html) {
     iframe.contentWindow.document.write(html.replace(/<head>/i, '<head><base href="' + url + '"><scr' + 'ipt>document.addEventListener("click", function(e) { if(e.target && e.target.nodeName == "A") { e.preventDefault(); parent.loadURL(e.target.href); } });</scr' + 'ipt>'));
     iframe.contentWindow.document.close();
 }
+var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  document.getElementById("date").innerText = date;
+  var mybr = document.createElement('br');
+  document.getElementById("date").appendChild(mybr);
 setInterval(function () {var x = Math.floor(Math.random() * 11);
  if (x === 5) {window.location.href = "kernelpanic.html";} }, 30000);
 

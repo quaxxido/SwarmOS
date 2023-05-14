@@ -116,5 +116,26 @@ body, html {
 .space {
     margin: 10px;
 }
+.utext {
+    position: absolute;
+    left: 15px;
+    top:-0.1px;
+}
+.date {
+    position: absolute;
+    left: 95%;
+    top:20%;
+    font-size: 15px;
+    color: white;
+}
+.user {
+    position: absolute;
+    top: 95%;
+    height: 30px;
+    width: 150px;
+    color: white;
+    text-indent: 3px;
+
+}
 .shadow { box-shadow: 0px 0px 10px rgba(0,0,0,.4)}
 
