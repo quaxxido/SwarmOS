@@ -90,7 +90,15 @@ body, html {
     text-align: center;
     
 }
-
+.micon {
+    color: #fff;
+    position: absolute;
+    top:94.5%;
+    left:94.5%;
+}
+.a {
+    color:white;
+}
 .desktopic p {
     margin-top: 0;
     color:white;
