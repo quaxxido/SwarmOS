@@ -1,6 +1,15 @@
 body {
     cursor: url("../desktop_html/cursors/this.png"), auto;
-    background-color: #0a86c2;
+    background-image: url("https://cdn.discordapp.com/attachments/1059569601144442911/1107924024236978226/asdasdasfa.png");
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    
+    background-size: cover;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 * {
     cursor: url("../desktop_html/cursors/this.png"), auto;
@@ -78,6 +87,62 @@ body {
     margin-left: 7px;
     height: 35px;
 }
+.desktopic p {
+    color:white;
+}
+
+.button{  
+    float:left;
+    width:200px;
+    padding:20px 30px;
+    margin:30px;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+    transition:background .5s;
+  }
+  
+  #success{
+    background:#03a679;
+    color:#f0f0f0;  
+  }
+  
+  #failure{
+    background:#ff3939;
+    color:#f0f0f0;  
+  }
+  
+  .notify{  
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:0;  
+    box-sizing:border-box;
+    color:white;  
+    text-align:center;
+    background:rgba(0,0,0,.6);
+    overflow:hidden;
+    box-sizing:border-box;
+    transition:height .2s;
+  }
+  
+  #notifyType:before{
+    display:block;
+    margin-top:15px; 
+    
+  }
+  
+  .active{  
+    height:50px;
+  }
+  
+  .success:before{
+    Content:"Aww Yeaaaaa! Success!";
+  }
+  
+  .failure:before{
+    Content:"Oh no! Something didn't go as planned :(";
+  }
 .desktopic {
     color:white;
     width:40px;
